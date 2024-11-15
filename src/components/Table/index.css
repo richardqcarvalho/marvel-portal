@@ -1,8 +1,36 @@
 table {
-  border-radius: 0.5rem;
   overflow-x: scroll;
+  border-collapse: collapse;
+  color: var(--secondary-color);
+  font-size: 11pt;
 }
 
-tr {
-  text-align: center;
+.table-container {
+  border: var(--border);
+  border-radius: 0.5rem;
+}
+
+thead {
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.tr-data {
+  border-top: var(--border);
+  transition: background 0.3s ease;
+}
+
+.tr-data:hover {
+  background: var(--primary-color-hover);
+  cursor: pointer;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: start;
+}
+
+td:hover {
+  background: transparent;
 }

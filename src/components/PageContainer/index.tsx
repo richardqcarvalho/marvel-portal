@@ -6,7 +6,7 @@ function PageContainer(props: { children: React.ReactNode }) {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="page-container">
       <button className="back-button" onClick={() => navigate("/")}>
         <ArrowLeft className="arrow-left" />
       </button>

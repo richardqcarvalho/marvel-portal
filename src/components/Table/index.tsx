@@ -5,24 +5,26 @@ function Table(props: { items: ItemT[]; columns: ColumnT[] }) {
   const { items, columns } = props;
 
   return (
-    <table>
-      <thead>
-        <tr>
-          {columns.map((column, i) => (
-            <th key={i}>{column.title}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {items.map((item) => (
-          <tr key={item.id}>
-            {columns.map((column) => (
-              <td>{item[column.data]}</td>
+    <div className="table-container">
+      <table>
+        <thead>
+          <tr>
+            {columns.map((column, i) => (
+              <th key={i}>{column.title}</th>
             ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {items.map((item, index) => (
+            <tr key={item.id} className={"tr-data"}>
+              {columns.map((column) => (
+                <td>{item[column.data] || "-"}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
