@@ -13,6 +13,7 @@ function Home() {
     <div>
       <h1>Home</h1>
       <button onClick={() => navigate("/characters")}>See characters</button>
+      <button onClick={() => navigate("/events")}>See events</button>
       <button onClick={handleLogout}>Logout</button>
     </div>
   );
