@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 
 function PrivateRoute() {
-  if (!localStorage.getItem("id")) return <Navigate to="/login" />;
+  if (!localStorage.getItem("password")) return <Navigate to="/login" />;
 
   return <Outlet />;
 }
