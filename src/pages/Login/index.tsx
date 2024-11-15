@@ -32,7 +32,7 @@ function Login() {
     <div>
       <h1>Login</h1>
       {showPasswordInput ? (
-        <form onSubmit={handleSignIn}>
+        <form onSubmit={handleSignIn} autoComplete="off">
           <div>
             <label htmlFor="password">Password</label>
             <input
