@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #ef4444;
+  --secondary-color: #f8fafc;
+  --primary-color-hover: #dc2626;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +19,7 @@ div {
 }
 
 #root {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
 }

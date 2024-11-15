@@ -1,0 +1,18 @@
+.back-button {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  border-radius: 100%;
+  border: none;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.back-button:hover {
+  background: var(--primary-color-hover);
+}
+
+.arrow-left {
+  width: 1rem;
+  height: 1rem;
+}
