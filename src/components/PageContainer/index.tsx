@@ -5,8 +5,8 @@ function PageContainer(props: { children: React.ReactNode }) {
 
   return (
     <div>
-      {props.children}
       <button onClick={() => navigate("/")}>Go back to home</button>
+      {props.children}
     </div>
   );
 }
