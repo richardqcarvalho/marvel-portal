@@ -1,0 +1,23 @@
+table {
+  border-radius: 0.5rem;
+  overflow-x: scroll;
+}
+
+tr {
+  text-align: center;
+}
+
+.pagination {
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+.number-information {
+  text-align: end;
+}
+
+.select-information {
+  width: 40rem;
+  flex-direction: row;
+  gap: 0.5rem;
+}
