@@ -1,0 +1,8 @@
+table {
+  border-radius: 0.5rem;
+  overflow-x: scroll;
+}
+
+tr {
+  text-align: center;
+}

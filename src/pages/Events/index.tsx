@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 import PageContainer from "../../components/PageContainer";
+import Pagination from "../../components/Pagination";
+import Table from "../../components/Table";
+import { PaginationT } from "../../models";
 
 function Events() {
+  const [pagination, setPagination] = useState<PaginationT>({
+    count: 10,
+    page: 1,
+  });
+  const [total, setTotal] = useState(0);
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -11,11 +19,16 @@ function Events() {
       try {
         setLoading(true);
         const result = await fetch(
-          `https://gateway.marvel.com/v1/public/events?apikey=${process.env.REACT_APP_PUBLIC_KEY}`,
+          `https://gateway.marvel.com/v1/public/events?apikey=${
+            process.env.REACT_APP_PUBLIC_KEY
+          }&offset=${(pagination.page - 1) * pagination.count}&limit=${
+            pagination.count
+          }`,
           { signal: controller.signal }
         );
         const { data } = await result.json();
         setEvents(data.results);
+        setTotal(data.total);
         setLoading(false);
       } catch (error) {}
     };
@@ -23,7 +36,7 @@ function Events() {
     getEvents();
 
     return () => controller.abort();
-  }, []);
+  }, [pagination]);
 
   return (
     <PageContainer>
@@ -31,9 +44,15 @@ function Events() {
         <span>Loading events...</span>
       ) : (
         <>
-          {events.map((event: { title: string }) => (
-            <span>{event.title}</span>
-          ))}
+          <Table items={events} columns={[{ title: "Title", data: "title" }]} />
+          {total > 0 && (
+            <Pagination
+              setPagination={setPagination}
+              count={pagination.count}
+              total={total}
+              page={pagination.page}
+            />
+          )}
         </>
       )}
     </PageContainer>
