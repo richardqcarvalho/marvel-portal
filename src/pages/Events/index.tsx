@@ -15,7 +15,6 @@ function Events() {
           `https://gateway.marvel.com/v1/public/events?apikey=${process.env.REACT_APP_PUBLIC_KEY}`,
           { signal: controller.signal }
         );
-
         const { data } = await result.json();
         setEvents(data.results);
         setLoading(false);
