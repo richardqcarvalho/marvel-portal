@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import PageContainer from "../../components/PageContainer";
 
 function Characters() {
-  const navigate = useNavigate();
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -27,7 +26,7 @@ function Characters() {
   }, []);
 
   return (
-    <div>
+    <PageContainer>
       {loading ? (
         <span>Loading characters...</span>
       ) : (
@@ -37,8 +36,7 @@ function Characters() {
           ))}
         </>
       )}
-      <button onClick={() => navigate("/")}>Go back to home</button>
-    </div>
+    </PageContainer>
   );
 }
 

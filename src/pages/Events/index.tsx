@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import PageContainer from "../../components/PageContainer";
 
 function Events() {
-  const navigate = useNavigate();
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -27,7 +26,7 @@ function Events() {
   }, []);
 
   return (
-    <div>
+    <PageContainer>
       {loading ? (
         <span>Loading events...</span>
       ) : (
@@ -37,8 +36,7 @@ function Events() {
           ))}
         </>
       )}
-      <button onClick={() => navigate("/")}>Go back to home</button>
-    </div>
+    </PageContainer>
   );
 }
 
