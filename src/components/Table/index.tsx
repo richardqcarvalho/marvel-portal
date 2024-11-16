@@ -7,9 +7,10 @@ function Table(props: {
   columns: Array<ColumnT>;
   onRowClick: (item: ItemT) => void;
   onSearchClick: (filter: string) => void;
+  searchTerm: string;
 }) {
-  const { items, columns, onRowClick, onSearchClick } = props;
-  const [filter, setFilter] = useState<string>("");
+  const { items, columns, onRowClick, onSearchClick, searchTerm } = props;
+  const [filter, setFilter] = useState<string>(searchTerm);
 
   return (
     <div className="table-contents">

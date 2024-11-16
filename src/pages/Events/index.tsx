@@ -60,6 +60,7 @@ function Events() {
             ]}
             onRowClick={(event: EventT) => setEvent(event)}
             onSearchClick={(filter: string) => setSearchTerm(filter)}
+            searchTerm={searchTerm}
           />
           {total > 0 && (
             <Pagination

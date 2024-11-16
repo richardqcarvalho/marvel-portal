@@ -63,6 +63,7 @@ function Characters() {
             ]}
             onRowClick={(character: CharacterT) => setCharacter(character)}
             onSearchClick={(filter: string) => setSearchTerm(filter)}
+            searchTerm={searchTerm}
           />
           {total > 0 && (
             <Pagination
