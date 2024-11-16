@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import Modal from "../../components/Modal";
 import PageContainer from "../../components/PageContainer";
 import Pagination from "../../components/Pagination";
 import Table from "../../components/Table";
-import { PaginationT } from "../../models";
+import { EventT, PaginationT } from "../../models";
 
 function Events() {
   const [pagination, setPagination] = useState<PaginationT>({
@@ -12,6 +13,7 @@ function Events() {
   const [total, setTotal] = useState(0);
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [event, setEvent] = useState<EventT>({});
 
   useEffect(() => {
     const controller = new AbortController();
@@ -44,7 +46,18 @@ function Events() {
         <span>Loading events...</span>
       ) : (
         <>
-          <Table items={events} columns={[{ title: "Title", data: "title" }]} />
+          {event.id && (
+            <Modal onBackgroundClick={() => setEvent({})} item={event} />
+          )}
+          <h1>Events</h1>
+          <Table
+            items={events}
+            columns={[
+              { title: "Title", data: "title" },
+              { title: "Description", data: "description" },
+            ]}
+            onRowClick={(event: EventT) => setEvent(event)}
+          />
           {total > 0 && (
             <Pagination
               setPagination={setPagination}

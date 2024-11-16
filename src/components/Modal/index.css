@@ -1,0 +1,68 @@
+.modal-background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  top: -1rem;
+  left: -1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  max-width: 40%;
+  min-width: 18rem;
+  max-height: 80%;
+  background: var(--primary-color);
+  z-index: 2;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.character-image {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.close-container {
+  flex-direction: row;
+  justify-content: end;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.close-button {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: var(--border);
+  color: var(--secondary-color);
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.close-button:hover {
+  background: var(--primary-color-hover);
+}
+
+.x {
+  width: 1rem;
+  height: 1rem;
+}
+
+.info-container {
+  align-items: center;
+  width: calc(100% - 4rem);
+  gap: 1rem;
+}
+
+.info-wrapper {
+  width: 100%;
+}

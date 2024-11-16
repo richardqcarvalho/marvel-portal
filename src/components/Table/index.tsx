@@ -1,8 +1,12 @@
 import { ColumnT, ItemT } from "../../models";
 import "./index.css";
 
-function Table(props: { items: ItemT[]; columns: ColumnT[] }) {
-  const { items, columns } = props;
+function Table(props: {
+  items: Array<ItemT>;
+  columns: Array<ColumnT>;
+  onRowClick: (item: ItemT) => void;
+}) {
+  const { items, columns, onRowClick } = props;
 
   return (
     <div className="table-container">
@@ -15,8 +19,14 @@ function Table(props: { items: ItemT[]; columns: ColumnT[] }) {
           </tr>
         </thead>
         <tbody>
-          {items.map((item, index) => (
-            <tr key={item.id} className={"tr-data"}>
+          {items.map((item) => (
+            <tr
+              key={item.id}
+              className="tr-data"
+              onClick={() => {
+                if (onRowClick) onRowClick(item);
+              }}
+            >
               {columns.map((column) => (
                 <td>{item[column.data] || "-"}</td>
               ))}

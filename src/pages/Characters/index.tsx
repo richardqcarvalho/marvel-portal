@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import Modal from "../../components/Modal";
 import PageContainer from "../../components/PageContainer";
 import Pagination from "../../components/Pagination";
 import Table from "../../components/Table";
-import { PaginationT } from "../../models";
+import { CharacterT, PaginationT } from "../../models";
 
 function Characters() {
   const [pagination, setPagination] = useState<PaginationT>({
@@ -12,6 +13,7 @@ function Characters() {
   const [total, setTotal] = useState(0);
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [character, setCharacter] = useState<CharacterT>({});
 
   useEffect(() => {
     const controller = new AbortController();
@@ -44,12 +46,20 @@ function Characters() {
         <span>Loading characters...</span>
       ) : (
         <>
+          {character.id && (
+            <Modal
+              onBackgroundClick={() => setCharacter({})}
+              item={character}
+            />
+          )}
+          <h1>Characters</h1>
           <Table
             items={characters}
             columns={[
               { title: "Name", data: "name" },
               { title: "Description", data: "description" },
             ]}
+            onRowClick={(character: CharacterT) => setCharacter(character)}
           />
           {total > 0 && (
             <Pagination
