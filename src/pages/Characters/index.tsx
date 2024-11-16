@@ -3,6 +3,7 @@ import Modal from "../../components/Modal";
 import PageContainer from "../../components/PageContainer";
 import Pagination from "../../components/Pagination";
 import Table from "../../components/Table";
+import TableLoading from "../../components/TableLoading";
 import { CharacterT, PaginationT } from "../../models";
 
 function Characters() {
@@ -42,8 +43,9 @@ function Characters() {
 
   return (
     <PageContainer>
+      <h1>Characters</h1>
       {loading ? (
-        <span>Loading characters...</span>
+        <TableLoading message="Loading characters..." />
       ) : (
         <>
           {character.id && (
@@ -52,7 +54,6 @@ function Characters() {
               item={character}
             />
           )}
-          <h1>Characters</h1>
           <Table
             items={characters}
             columns={[

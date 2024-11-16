@@ -3,6 +3,7 @@ import Modal from "../../components/Modal";
 import PageContainer from "../../components/PageContainer";
 import Pagination from "../../components/Pagination";
 import Table from "../../components/Table";
+import TableLoading from "../../components/TableLoading";
 import { EventT, PaginationT } from "../../models";
 
 function Events() {
@@ -42,14 +43,14 @@ function Events() {
 
   return (
     <PageContainer>
+      <h1>Events</h1>
       {loading ? (
-        <span>Loading events...</span>
+        <TableLoading message="Loading events..." />
       ) : (
         <>
           {event.id && (
             <Modal onBackgroundClick={() => setEvent({})} item={event} />
           )}
-          <h1>Events</h1>
           <Table
             items={events}
             columns={[

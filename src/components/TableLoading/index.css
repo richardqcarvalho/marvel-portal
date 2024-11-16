@@ -1,0 +1,31 @@
+.loading-container {
+  width: 100%;
+  background: transparent;
+  border: var(--primary-border);
+  border-radius: 0.5rem;
+  align-items: center;
+  padding: 5rem;
+  gap: 1rem;
+}
+
+.loading {
+  border: 0.5rem solid var(--secondary-color-disabled);
+  border-radius: 100%;
+  border-top: 0.5rem solid var(--secondary-color);
+  width: 5rem;
+  height: 5rem;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-message {
+  font-size: 11pt;
+}

@@ -20,4 +20,5 @@
 
 .page-container {
   gap: 1rem;
+  flex: 1;
 }
