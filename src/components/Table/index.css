@@ -112,6 +112,18 @@ td:hover {
 
 .date-select {
   height: 100%;
+  background: var(--primary-color);
+}
+
+.date-select-label {
+  position: absolute;
+  background: var(--primary-color);
+  height: 0.9rem;
+  padding: 0.1rem 0.2rem;
+  top: -0.5rem;
+  left: 0.5rem;
+  font-size: 7pt;
+  color: var(--secondary-color);
 }
 
 .date-selectors {
