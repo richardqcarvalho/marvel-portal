@@ -24,13 +24,11 @@ function Home() {
             <div className="content-text">
               <h3 className="content-title">Characters</h3>
               <span className="content-description">
-                Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                Explore the vast universe of Marvel characters! Discover
+                detailed profiles of iconic heroes like Spider-Man, Iron Man,
+                and Captain America, as well as intriguing villains like Thanos,
+                Loki, and Doctor Doom. Dive into their descriptions, comics
+                where they participated, series and more.
               </span>
             </div>
             <div className="button-container">
@@ -46,8 +44,10 @@ function Home() {
             <div className="content-text">
               <h3 className="content-title">Events</h3>
               <span className="content-description">
-                Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
-                lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+                Relive the biggest moments in Marvel history! Visit events that
+                have shaped the Marvel Universe, from epic crossovers like
+                Secret Wars and Civil War to universe-altering sagas like
+                Infinity Gauntlet and House of M.
               </span>
             </div>
             <div className="button-container">
