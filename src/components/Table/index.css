@@ -91,3 +91,23 @@ td:hover {
   color: var(--primary-color-disabled);
   color: var(--secondary-color-disabled);
 }
+
+.search-bar {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.date-input {
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.date-label {
+  color: var(--secondary-color);
+  font-size: 10pt;
+}
+
+.date-select {
+  height: 100%;
+}

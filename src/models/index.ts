@@ -2,7 +2,7 @@ export type CharacterT = {
   id?: number;
   name?: string;
   description?: string;
-  modified?: Date;
+  modified?: string;
   resourceURI?: string;
   urls?: Array<UrlT>;
   thumbnail?: ImageT;
@@ -77,9 +77,9 @@ export type EventT = {
   description?: string;
   resourceURI?: string;
   urls?: Array<UrlT>;
-  modified?: Date;
-  start?: Date;
-  end?: Date;
+  modified?: string;
+  start?: string;
+  end?: string;
   thumbnail?: ImageT;
   comics?: ComicListT;
   stories?: StoryListT;
