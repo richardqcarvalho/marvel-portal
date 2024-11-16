@@ -3,7 +3,7 @@
   height: 2rem;
   cursor: pointer;
   border-radius: 0.5rem;
-  border: var(--border);
+  border: var(--primary-border);
   color: var(--secondary-color);
   background: transparent;
   transition: background 0.3s ease;

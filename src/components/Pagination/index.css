@@ -34,7 +34,7 @@
   height: 2rem;
   cursor: pointer;
   border-radius: 0.5rem;
-  border: var(--border);
+  border: var(--primary-border);
   color: var(--secondary-color);
   background: transparent;
   transition: background 0.3s ease;
@@ -59,7 +59,7 @@ select {
   padding: 0 0.5rem;
   cursor: pointer;
   color: var(--secondary-color);
-  border: var(--border);
+  border: var(--primary-border);
   border-radius: 0.5rem;
   transition: background 0.3s ease;
 }

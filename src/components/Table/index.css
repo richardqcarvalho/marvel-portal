@@ -6,7 +6,7 @@ table {
 }
 
 .table-container {
-  border: var(--border);
+  border: var(--primary-border);
   border-radius: 0.5rem;
 }
 
@@ -16,7 +16,7 @@ thead {
 }
 
 .tr-data {
-  border-top: var(--border);
+  border-top: var(--primary-border);
   transition: background 0.3s ease;
 }
 

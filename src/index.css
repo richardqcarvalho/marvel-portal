@@ -3,9 +3,12 @@
 :root {
   --primary-color: #1e3a8a;
   --primary-color-hover: #1e40af;
-  --secondary-color: #f8fafc;
-  --secondary-color-disabled: rgba(248, 250, 252, 0.25);
-  --border: 0.1rem solid var(--secondary-color-disabled);
+  --primary-color-disabled: rgba(30, 58, 138, 0.25);
+  --primary-border: 0.1rem solid var(--secondary-color-disabled);
+  --secondary-color: #f4f4f5;
+  --secondary-color-hover: #e4e4e7;
+  --secondary-color-disabled: rgba(249, 250, 251, 0.25);
+  --secondary-border: 0.1rem solid var(--primary-color-disabled);
 }
 
 * {
@@ -31,6 +34,7 @@ button {
 }
 
 h1,
+h3,
 span {
   color: var(--secondary-color);
 }
