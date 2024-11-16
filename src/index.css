@@ -9,6 +9,9 @@
   --secondary-color-hover: #e4e4e7;
   --secondary-color-disabled: rgba(249, 250, 251, 0.25);
   --secondary-border: 0.1rem solid var(--primary-color-disabled);
+  --error-color: #fca5a5;
+  --error-color-disabled: rgba(252, 165, 165, 0.25);
+  --error-border: 0.1rem solid var(--error-color-disabled);
 }
 
 * {

@@ -1,0 +1,80 @@
+.login-input {
+  padding: 1rem;
+  background: transparent;
+  color: var(--secondary-color);
+  border-radius: 0.5rem;
+  border: var(--primary-border);
+}
+
+.login-input::placeholder {
+  color: var(--secondary-color-disabled);
+}
+
+.login-label {
+  position: absolute;
+  background: var(--primary-color);
+  height: 1.3rem;
+  padding: 0.25rem 0.5rem;
+  top: -0.65rem;
+  left: 1rem;
+  font-size: 9pt;
+  color: var(--secondary-color);
+}
+
+.login-container {
+  gap: 1rem;
+}
+
+.submit-button {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: var(--primary-border);
+  color: var(--secondary-color);
+  background: transparent;
+  transition: background 0.3s ease;
+  padding: 0.75rem;
+}
+
+.submit-button:hover {
+  background: var(--primary-color-hover);
+}
+
+.submit-button:disabled {
+  color: var(--secondary-color-disabled);
+}
+
+.submit-button:disabled:hover {
+  background: transparent;
+  cursor: auto;
+}
+
+.button-container {
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 9pt;
+  margin-top: -0.5rem;
+}
+
+.error-input {
+  border: var(--error-border);
+}
+
+.error-label {
+  color: var(--error-color);
+}
+
+.redirect-button {
+  color: var(--secondary-color);
+  cursor: pointer;
+  font-size: 10pt;
+}
+
+.redirect-button:hover {
+  color: var(--primary-color-disabled);
+  color: var(--secondary-color-disabled);
+}

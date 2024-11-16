@@ -1,5 +1,6 @@
 import { FormEventHandler, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./index.css";
 
 function Login() {
   const navigate = useNavigate();
@@ -24,17 +25,21 @@ function Login() {
   const handleSignIn: FormEventHandler = (e) => {
     e.preventDefault();
 
+    if (password.length === 0) return;
+
     localStorage.setItem("password", password);
     navigate("/");
   };
 
   return (
-    <div>
+    <div className="login-container">
       <h1>Login</h1>
       {showPasswordInput ? (
         <form onSubmit={handleSignIn} autoComplete="off">
-          <div>
-            <label htmlFor="password">Password</label>
+          <div className="login-container">
+            <label htmlFor="password" className="login-label">
+              Password
+            </label>
             <input
               type="password"
               placeholder="Type your password"
@@ -42,28 +47,54 @@ function Login() {
               name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="login-input"
             />
+            <div className="button-container">
+              <button
+                type="submit"
+                className="submit-button"
+                disabled={password.length === 0}
+              >
+                Sign in
+              </button>
+              <span
+                onClick={() => setShowPasswordInput(false)}
+                className="redirect-button"
+              >
+                Use another email
+              </span>
+            </div>
           </div>
-          <button type="submit">Sign in</button>
-          <button onClick={() => setShowPasswordInput(false)}>
-            Use another email
-          </button>
         </form>
       ) : (
         <form onSubmit={handleEmailValidation} noValidate>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              placeholder="Type your email"
-              required
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            {error && <span>Type a valid email</span>}
+          <div className="login-container">
+            <div className="login-container">
+              <label
+                htmlFor="email"
+                className={`login-label ${error && "error-label"}`}
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                placeholder="Type your email"
+                required
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={`login-input ${error && "error-input"}`}
+              />
+              {error && (
+                <span className="error-message">Type a valid email</span>
+              )}
+            </div>
+            <div className="button-container">
+              <button type="submit" className="submit-button">
+                Next
+              </button>
+            </div>
           </div>
-          <button type="submit">Next</button>
         </form>
       )}
     </div>
