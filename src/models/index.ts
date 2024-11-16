@@ -22,7 +22,7 @@ type ImageT = {
   extension?: string;
 };
 
-type ComicListT = {
+export type ComicListT = {
   available?: number;
   returned?: number;
   collectionURI?: string;
@@ -34,7 +34,7 @@ type ComicSummaryT = {
   name?: string;
 };
 
-type StoryListT = {
+export type StoryListT = {
   available?: number;
   returned?: number;
   collectionURI?: string;
@@ -47,7 +47,7 @@ type StorySummaryT = {
   type?: string;
 };
 
-type EventListT = {
+export type EventListT = {
   available?: number;
   returned?: number;
   collectionURI?: string;
@@ -59,7 +59,7 @@ type EventSummaryT = {
   name?: string;
 };
 
-type SeriesListT = {
+export type SeriesListT = {
   available?: number;
   returned?: number;
   collectionURI?: string;
@@ -90,7 +90,7 @@ export type EventT = {
   previous?: EventSummaryT;
 };
 
-type CharacterListT = {
+export type CharacterListT = {
   available?: number;
   returned?: number;
   collectionURI?: string;
@@ -103,7 +103,7 @@ type CharacterSummaryT = {
   role?: string;
 };
 
-type CreatorListT = {
+export type CreatorListT = {
   available?: number;
   returned?: number;
   collectionURI?: string;
