@@ -59,7 +59,7 @@
 .info-container {
   align-items: center;
   width: calc(100% - 4rem);
-  gap: 1rem;
+  gap: 2rem;
   overflow-y: auto;
   padding: 1rem;
   margin: 1rem 0;
