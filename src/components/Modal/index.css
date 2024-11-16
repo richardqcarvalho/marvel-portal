@@ -23,9 +23,8 @@
 }
 
 .character-image {
-  width: 10rem;
-  height: 10rem;
-  object-fit: cover;
+  max-width: 10rem;
+  max-height: 10rem;
   border-radius: 0.5rem;
 }
 
