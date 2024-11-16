@@ -1,10 +1,11 @@
-import { FormEventHandler, useState } from "react";
+import { FormEventHandler, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./index.css";
 
 function Login() {
   const navigate = useNavigate();
-
+  const emailInputRef = useRef<HTMLInputElement>(null);
+  const passwordInputRef = useRef<HTMLInputElement>(null);
   const [email, setEmail] = useState(localStorage.getItem("email") || "");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
@@ -31,6 +32,12 @@ function Login() {
     navigate("/");
   };
 
+  useEffect(() => {
+    if (showPasswordInput && passwordInputRef.current)
+      passwordInputRef.current.focus();
+    else if (emailInputRef.current) emailInputRef.current.focus();
+  }, [showPasswordInput]);
+
   return (
     <div className="login-container">
       <h1>Login</h1>
@@ -48,6 +55,10 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="login-input"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && password.length > 0) handleSignIn(e);
+              }}
+              ref={passwordInputRef}
             />
             <div className="button-container">
               <button
@@ -84,6 +95,10 @@ function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className={`login-input ${error && "error-input"}`}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handleEmailValidation(e);
+                }}
+                ref={emailInputRef}
               />
               {error && (
                 <span className="error-message">Type a valid email</span>

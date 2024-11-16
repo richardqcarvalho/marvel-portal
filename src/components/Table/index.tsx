@@ -39,6 +39,9 @@ function Table(props: {
             value={filter}
             placeholder="Filter content..."
             onChange={(e) => setFilter(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && filter.length > 0) onSearchClick(filter);
+            }}
             className="search-input"
           />
           <button
