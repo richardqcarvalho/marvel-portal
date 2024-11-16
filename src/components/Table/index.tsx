@@ -112,7 +112,7 @@ function Table(props: {
           </select>
           <button
             className="search-button"
-            disabled={day === 0 && month === 0 && year === 0}
+            disabled={day === 1 && month === 1 && year === 1960}
             onClick={() => {
               if (day !== 0) setDay(0);
               if (month !== 0) setMonth(0);
