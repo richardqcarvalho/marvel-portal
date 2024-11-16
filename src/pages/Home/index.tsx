@@ -6,7 +6,8 @@ function Home() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("id");
+    localStorage.removeItem("email");
+    localStorage.removeItem("password");
     navigate("/login");
   };
 
