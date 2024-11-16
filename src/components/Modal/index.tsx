@@ -46,7 +46,7 @@ function Modal(props: { onBackgroundClick: () => void; item: ItemT }) {
                 <b>Comics</b>
               </span>
               {item.comics.items.map((comicItem) => (
-                <span key={comicItem.resourceURI}>{comicItem.name}</span>
+                <span key={comicItem.resourceURI}>{`- ${comicItem.name}`}</span>
               ))}
             </div>
           )}
@@ -58,7 +58,9 @@ function Modal(props: { onBackgroundClick: () => void; item: ItemT }) {
                   <b>Stories</b>
                 </span>
                 {item.stories.items.map((storyItem) => (
-                  <span key={storyItem.resourceURI}>{storyItem.name}</span>
+                  <span
+                    key={storyItem.resourceURI}
+                  >{`- ${storyItem.name}`}</span>
                 ))}
               </div>
             )}
@@ -68,7 +70,7 @@ function Modal(props: { onBackgroundClick: () => void; item: ItemT }) {
                 <b>Events</b>
               </span>
               {item.events.items.map((eventItem) => (
-                <span key={eventItem.resourceURI}>{eventItem.name}</span>
+                <span key={eventItem.resourceURI}>{`- ${eventItem.name}`}</span>
               ))}
             </div>
           )}
@@ -78,8 +80,54 @@ function Modal(props: { onBackgroundClick: () => void; item: ItemT }) {
                 <b>Series</b>
               </span>
               {item.series.items.map((seriesItem) => (
-                <span key={seriesItem.resourceURI}>{seriesItem.name}</span>
+                <span
+                  key={seriesItem.resourceURI}
+                >{`- ${seriesItem.name}`}</span>
               ))}
+            </div>
+          )}
+          {item.characters &&
+            item.characters.items &&
+            item.characters.items.length > 0 && (
+              <div className="info-wrapper">
+                <span>
+                  <b>Characters present</b>
+                </span>
+                {item.characters.items.map((charactersItem) => (
+                  <span
+                    key={charactersItem.resourceURI}
+                  >{`- ${charactersItem.name}`}</span>
+                ))}
+              </div>
+            )}
+          {item.creators &&
+            item.creators.items &&
+            item.creators.items.length > 0 && (
+              <div className="info-wrapper">
+                <span>
+                  <b>Event creators</b>
+                </span>
+                {item.creators.items.map((creatorsItem) => (
+                  <span
+                    key={creatorsItem.resourceURI}
+                  >{`- ${creatorsItem.name}`}</span>
+                ))}
+              </div>
+            )}
+          {item.next && item.next.name && (
+            <div className="info-wrapper">
+              <span>
+                <b>Next event</b>
+              </span>
+              <span>{item.next.name}</span>
+            </div>
+          )}
+          {item.previous && item.previous.name && (
+            <div className="info-wrapper">
+              <span>
+                <b>Previous event</b>
+              </span>
+              <span>{item.previous.name}</span>
             </div>
           )}
         </div>
