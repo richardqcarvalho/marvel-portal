@@ -61,6 +61,12 @@ function Login() {
               ref={passwordInputRef}
             />
             <div className="button-container">
+              <span
+                onClick={() => setShowPasswordInput(false)}
+                className="redirect-button"
+              >
+                Use another email
+              </span>
               <button
                 type="submit"
                 className="submit-button"
@@ -68,12 +74,6 @@ function Login() {
               >
                 Sign in
               </button>
-              <span
-                onClick={() => setShowPasswordInput(false)}
-                className="redirect-button"
-              >
-                Use another email
-              </span>
             </div>
           </div>
         </form>

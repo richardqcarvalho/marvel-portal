@@ -32,7 +32,7 @@ function Home() {
                 where they participated, series and more.
               </span>
             </div>
-            <div className="button-container">
+            <div className="content-button-container">
               <button
                 onClick={() => navigate("/characters")}
                 className="table-button"
@@ -51,7 +51,7 @@ function Home() {
                 Infinity Gauntlet and House of M.
               </span>
             </div>
-            <div className="button-container">
+            <div className="content-button-container">
               <button
                 onClick={() => navigate("/events")}
                 className="table-button"
