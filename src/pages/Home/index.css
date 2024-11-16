@@ -109,4 +109,8 @@
   .content-wrapper {
     flex-direction: column;
   }
+
+  .home-content {
+    align-items: flex-start;
+  }
 }
