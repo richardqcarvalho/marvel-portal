@@ -65,54 +65,56 @@ function Table(props: {
           <label className="date-label">
             Filter by content modified since:
           </label>
-          <select
-            className="date-select"
-            value={day}
-            onChange={(e) => {
-              const newDay = parseInt(e.target.value);
-              setDay(newDay);
-              if (newDay > 1)
-                onDatePick(new Date(year, month - 1, newDay).toJSON());
-            }}
-          >
-            {days.map((day) => (
-              <option key={day} value={day}>
-                {day}
-              </option>
-            ))}
-          </select>
-          <select
-            className="date-select"
-            value={month}
-            onChange={(e) => {
-              const newMonth = parseInt(e.target.value);
-              setMonth(newMonth);
-              if (newMonth > 1)
-                onDatePick(new Date(year, newMonth - 1, day).toJSON());
-            }}
-          >
-            {months.map((month) => (
-              <option key={month} value={month}>
-                {month}
-              </option>
-            ))}
-          </select>
-          <select
-            className="date-select"
-            value={year}
-            onChange={(e) => {
-              const newYear = parseInt(e.target.value);
-              setYear(newYear);
-              if (newYear > 1)
-                onDatePick(new Date(newYear, month - 1, day).toJSON());
-            }}
-          >
-            {years.map((year) => (
-              <option key={year} value={year}>
-                {year}
-              </option>
-            ))}
-          </select>
+          <div className="date-selectors">
+            <select
+              className="date-select"
+              value={day}
+              onChange={(e) => {
+                const newDay = parseInt(e.target.value);
+                setDay(newDay);
+                if (newDay > 1)
+                  onDatePick(new Date(year, month - 1, newDay).toJSON());
+              }}
+            >
+              {days.map((day) => (
+                <option key={day} value={day}>
+                  {day}
+                </option>
+              ))}
+            </select>
+            <select
+              className="date-select"
+              value={month}
+              onChange={(e) => {
+                const newMonth = parseInt(e.target.value);
+                setMonth(newMonth);
+                if (newMonth > 1)
+                  onDatePick(new Date(year, newMonth - 1, day).toJSON());
+              }}
+            >
+              {months.map((month) => (
+                <option key={month} value={month}>
+                  {month}
+                </option>
+              ))}
+            </select>
+            <select
+              className="date-select"
+              value={year}
+              onChange={(e) => {
+                const newYear = parseInt(e.target.value);
+                setYear(newYear);
+                if (newYear > 1)
+                  onDatePick(new Date(newYear, month - 1, day).toJSON());
+              }}
+            >
+              {years.map((year) => (
+                <option key={year} value={year}>
+                  {year}
+                </option>
+              ))}
+            </select>
+          </div>
           <button
             className="search-button"
             disabled={day === 1 && month === 1 && year === 1960}

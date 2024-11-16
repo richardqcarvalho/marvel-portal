@@ -72,3 +72,16 @@ select:hover {
   width: 1rem;
   height: 1rem;
 }
+
+@media (max-width: 40rem) {
+  .select-information {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 32rem) {
+  .select-wrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
