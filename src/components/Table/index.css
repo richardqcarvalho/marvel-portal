@@ -34,3 +34,60 @@ td {
 td:hover {
   background: transparent;
 }
+
+.search-input {
+  padding: 1rem;
+  background: transparent;
+  color: var(--secondary-color);
+  border-radius: 0.5rem;
+  border: var(--primary-border);
+}
+
+.search-input::placeholder {
+  color: var(--secondary-color-disabled);
+}
+
+.table-contents {
+  gap: 1rem;
+}
+
+.search-container {
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-button {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: var(--primary-border);
+  color: var(--secondary-color);
+  background: transparent;
+  transition: background 0.3s ease;
+  height: 100%;
+  padding: 0.75rem;
+}
+
+.search-button:hover {
+  background: var(--primary-color-hover);
+}
+
+.search-button:disabled {
+  color: var(--secondary-color-disabled);
+}
+
+.search-button:disabled:hover {
+  background: transparent;
+  cursor: auto;
+}
+
+.clear-button {
+  color: var(--secondary-color);
+  cursor: pointer;
+  font-size: 10pt;
+}
+
+.clear-button:hover {
+  color: var(--primary-color-disabled);
+  color: var(--secondary-color-disabled);
+}

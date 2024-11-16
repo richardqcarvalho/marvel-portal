@@ -15,6 +15,7 @@ function Characters() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(false);
   const [character, setCharacter] = useState<CharacterT>({});
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const controller = new AbortController();
@@ -26,7 +27,7 @@ function Characters() {
             process.env.REACT_APP_PUBLIC_KEY
           }&offset=${(pagination.page - 1) * pagination.count}&limit=${
             pagination.count
-          }`,
+          }${searchTerm && `&nameStartsWith=${searchTerm}`}`,
           { signal: controller.signal }
         );
         const { data } = await result.json();
@@ -39,7 +40,7 @@ function Characters() {
     getCharacters();
 
     return () => controller.abort();
-  }, [pagination]);
+  }, [pagination, searchTerm]);
 
   return (
     <PageContainer>
@@ -61,6 +62,7 @@ function Characters() {
               { title: "Description", data: "description" },
             ]}
             onRowClick={(character: CharacterT) => setCharacter(character)}
+            onSearchClick={(filter: string) => setSearchTerm(filter)}
           />
           {total > 0 && (
             <Pagination

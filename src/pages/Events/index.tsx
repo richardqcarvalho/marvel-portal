@@ -15,6 +15,7 @@ function Events() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(false);
   const [event, setEvent] = useState<EventT>({});
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const controller = new AbortController();
@@ -26,7 +27,7 @@ function Events() {
             process.env.REACT_APP_PUBLIC_KEY
           }&offset=${(pagination.page - 1) * pagination.count}&limit=${
             pagination.count
-          }`,
+          }${searchTerm && `&nameStartsWith=${searchTerm}`}`,
           { signal: controller.signal }
         );
         const { data } = await result.json();
@@ -39,7 +40,7 @@ function Events() {
     getEvents();
 
     return () => controller.abort();
-  }, [pagination]);
+  }, [pagination, searchTerm]);
 
   return (
     <PageContainer>
@@ -58,6 +59,7 @@ function Events() {
               { title: "Description", data: "description" },
             ]}
             onRowClick={(event: EventT) => setEvent(event)}
+            onSearchClick={(filter: string) => setSearchTerm(filter)}
           />
           {total > 0 && (
             <Pagination
