@@ -83,7 +83,7 @@ function Login() {
             <div className="login-container">
               <label
                 htmlFor="email"
-                className={`login-label ${error && "error-label"}`}
+                className={`login-label${error ? " error-label" : ""}`}
               >
                 Email
               </label>
@@ -94,7 +94,7 @@ function Login() {
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className={`login-input ${error && "error-input"}`}
+                className={`login-input${error ? " error-input" : ""}`}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") handleEmailValidation(e);
                 }}
